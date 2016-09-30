@@ -150,6 +150,15 @@ $.widget( "ui.autocomplete", {
 						event.preventDefault();
 					}
 					break;
+						// None of these keys are in jQuery.ui.keyCode
+				case 16:	// Shift Key
+				case 17:	// Ctrl key
+				case 18:	// Alt key
+					if ( this.menu.active ) {
+						suppressKeyPress = true;
+						event.preventDefault();
+					}
+					break;
 				default:
 					suppressKeyPressRepeat = true;
 
